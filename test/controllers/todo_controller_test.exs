@@ -1,5 +1,6 @@
 defmodule Todos.TodoControllerTest do
   use Todos.ConnCase
+  alias Todos.TodoView
 
   test "#index renders a list of todos" do
     conn = build_conn()
@@ -7,7 +8,7 @@ defmodule Todos.TodoControllerTest do
 
     conn = get conn, todo_path(conn, :index)
 
-    assert json_response(conn, 200) == render_json("index.json", todos: [todo])
+    assert json_response(conn, 200) == render_json(TodoView, "index.json", todos: [todo])
   end
 
   test "#show renders a single todo" do
@@ -16,14 +17,6 @@ defmodule Todos.TodoControllerTest do
 
     conn = get conn, todo_path(conn, :show, todo)
 
-    assert json_response(conn, 200) == render_json("show.json", todo: todo)
-  end
-
-  defp render_json(template, assigns) do
-    assigns = Map.new(assigns)
-
-    Todos.TodoView.render(template, assigns)
-    |> Poison.encode!
-    |> Poison.decode!
+    assert json_response(conn, 200) == render_json(TodoView, "show.json", todo: todo)
   end
 end

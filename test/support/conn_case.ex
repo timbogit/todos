@@ -28,6 +28,7 @@ defmodule Todos.ConnCase do
       import Todos.Router.Helpers
 
       import Todos.Factory
+      import Todos.ConnCaseHelper
 
       # The default endpoint for testing
       @endpoint Todos.Endpoint
