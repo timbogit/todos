@@ -25,19 +25,24 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 ## Test cURLs
 
 * To retrieve all TODOS:
-  `curl -H "Content-Type: application/json" http://localhost:4000/api/todos`
+
+    `curl -H "Content-Type: application/json" http://localhost:4000/api/todos`
 
 * To create a TODO:
-  `curl -H "Content-Type: application/json" -X POST -d '{"todo": {"title": "Foo", "description": "Bar"}}' http://localhost:4000/api/todos`
+
+    `curl -H "Content-Type: application/json" -X POST -d '{"todo": {"title": "Foo", "description": "Bar"}}' http://localhost:4000/api/todos`
 
 * To retrieve the TODO with ID 1:
-  `curl -H "Content-Type: application/json" http://localhost:4000/api/todos/1`
+
+    `curl -H "Content-Type: application/json" http://localhost:4000/api/todos/1`
 
 * To delete the TODO with ID 1:
-  `curl -H "Content-Type: application/json" -X DELETE http://localhost:4000/api/todos/1`
+
+    `curl -H "Content-Type: application/json" -X DELETE http://localhost:4000/api/todos/1`
 
 * To update the TO with ID 1:
-  `curl -H "Content-Type: application/json" -X PUT -d '{"todo": {"title": "Foo", "description": "Baz"}}' http://localhost:4000/api/todos/1`
+
+    `curl -H "Content-Type: application/json" -X PUT -d '{"todo": {"title": "Foo", "description": "Baz"}}' http://localhost:4000/api/todos/1`
 
 ## Learn more
 
