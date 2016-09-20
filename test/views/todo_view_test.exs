@@ -9,6 +9,7 @@ defmodule Todos.TodoViewTest do
     rendered_todo = TodoView.todo_json(todo)
 
     assert rendered_todo == %{
+      id: todo.id,
       title: todo.title,
       description: todo.description,
       inserted_at: todo.inserted_at,
@@ -22,7 +23,7 @@ defmodule Todos.TodoViewTest do
     rendered_todos = TodoView.render("index.json", %{todos: [todo]})
 
     assert rendered_todos == %{
-      todos: [TodoView.todo_json(todo)]
+      data: [TodoView.todo_json(todo)]
     }
   end
 
@@ -32,7 +33,7 @@ defmodule Todos.TodoViewTest do
     rendered_todo = TodoView.render("show.json", %{todo: todo})
 
     assert rendered_todo == %{
-      todo: TodoView.todo_json(todo)
+      data: TodoView.todo_json(todo)
     }
   end
 end
